@@ -25,14 +25,23 @@ THEN I am presented with current and future conditions for that city and that ci
     -add city searched for to query URL (searchedCity variable)
     -display city in search history - yes
         -set the number of cities to be displayed
-    -save city to local storage - only saving the most recent
+    -save city to local storage - only saving the most recent?
     -display city to the right box - yes
         -format city box
     
 WHEN I view current weather conditions for that city
-THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
-    -determine the attributes of the response needed
-    -display them in html
+THEN I am presented with the 
+    - set up API call - yes
+        get call to work with the city that has been typed in
+    - determine the attributes of the response needed & location
+        city name - "name"
+        the date
+        an icon representation of weather conditions - "icon"
+        the temperature - "temp" (convert to Farenheit)
+        the humidity - "humidity"
+        the wind speed - "wind" . "speed"
+        the UV index
+     -display them in html
 
 WHEN I view the UV index
 THEN I am presented with a color that indicates whether the conditions are favorable, moderate, or severe
