@@ -17,28 +17,35 @@ SO THAT I can plan a trip accordingly
 
 ```
 GIVEN a weather dashboard with form inputs
+
 WHEN I search for a city
 THEN I am presented with current and future conditions for that city and that city is added to the search history
+    -create search box in html - yes
+        -add magnifying glass icon button
+    -add city searched for to query URL (searchedCity variable)
+    -display city in search history - yes
+        -set the number of cities to be displayed
+    -save city to local storage - only saving the most recent
+    -display city to the right box - yes
+        -format city box
+    
 WHEN I view current weather conditions for that city
 THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
+    -determine the attributes of the response needed
+    -display them in html
+
 WHEN I view the UV index
 THEN I am presented with a color that indicates whether the conditions are favorable, moderate, or severe
+    -set colors in CSS for conditions
+    -use UV index attribute to determine what color will be displayed
+
 WHEN I view future weather conditions for that city
 THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, and the humidity
+
 WHEN I click on a city in the search history
 THEN I am again presented with current and future conditions for that city
+
 WHEN I open the weather dashboard
 THEN I am presented with the last searched city forecast
 ```
 
-The following image demonstrates the application functionality:
-
-![weather dashboard demo](./Assets/06-server-side-apis-homework-demo.png)
-
-## Review
-
-You are required to submit the following for review:
-
-* The URL of the deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
