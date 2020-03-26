@@ -41,7 +41,8 @@ THEN I am presented with the
         the humidity - "humidity"
         the wind speed - "wind" . "speed"
         the UV index
-     -display them in html
+     -display them in html - yes
+        -still missing date/UV index
 
 WHEN I view the UV index
 THEN I am presented with a color that indicates whether the conditions are favorable, moderate, or severe

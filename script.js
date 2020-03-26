@@ -26,29 +26,31 @@ $(document).ready(function(){
         console.log(response)
         //name
         var cityName = response.name
-        console.log(cityName)
+        $(".city").html("<h3>" + cityName + " Weather Details</h3>");
 
         //date
 
         //icon (shown on page)
         var weatherIcon = response.weather[0].icon
-        console.log(weatherIcon)
         var iconUrl = "http://openweathermap.org/img/w/" + weatherIcon + ".png";
-        $('#test').html("<img src='" + iconUrl  + "'>");
+        $('.icon').html("<img src='" + iconUrl  + "'>");
 
         //temp (converted to F)
         var cityTemp = (response.main.temp - 273.15) * 1.80 + 32;
-        console.log(cityTemp)
+        $(".temp").text("Temperature: " + cityTemp.toFixed(1) + " degrees Farenheit");
+    
 
         //humidty
         var cityHumidity = response.main.humidity
-        console.log(cityHumidity)
+        $('.humidity').text("Humidity: " + cityHumidity)
 
         //windspeed
         var cityWindSpeed = response.wind.speed
-        console.log(cityWindSpeed)
+        $('.windspeed').text("Wind Speed: " + cityWindSpeed)
 
         //UV index
+        var uvIndex 
+        $('.uvindex').text("UV index: ")
 
       });
 });
