@@ -6,3 +6,14 @@ header {
     background-color: darkgray;
 }
 
+.favorable{
+    background-color: lightgreen;
+}
+
+.moderate {
+    background-color: yellow;
+}
+
+.severe {
+    background-color: tomato;
+}

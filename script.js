@@ -64,26 +64,37 @@ $(document).ready(function(){
       //longitude
       var longitude = response.coord.lon
       
-        uvURL = 'http://api.openweathermap.org/data/2.5/uvi?appid=5cd539647450f9a07b96edfc16f158cb&lat=' + lattitude + '&lon=' + longitude
+      //UV index API call  
+      uvURL = 'http://api.openweathermap.org/data/2.5/uvi?appid=5cd539647450f9a07b96edfc16f158cb&lat=' + lattitude + '&lon=' + longitude
 
         $.ajax({
           url: uvURL,
           method: "GET"
           }).then(function(response) {
-          console.log(response)
+          
           //UV index
-
           var uvIndex = response.value
           console.log(uvIndex)
+          var UV = parseFloat(uvIndex).toFixed(1)
+          console.log(UV)
           $('.uvindex').text("UV index: " + uvIndex)
-          })
+            if (UV > 7)
+              $('.uvindex').addClass('severe')
+            else if (4 > UV)
+              $('.uvindex').addClass('favorable')
+            else
+              $('.uvindex').addClass('moderate')
+            
+
+          });
+
+    
 
       });
 
 
 
-
-      //API call 2
+      //API call for 5 Day Forecast
       queryURL2 = 'http://api.openweathermap.org/data/2.5/forecast?q=' + searchedCity + '&appid=5cd539647450f9a07b96edfc16f158cb'
       console.log(queryURL2)
       $.ajax({
