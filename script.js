@@ -9,10 +9,17 @@ console.log(moment)
 //curent date (automatically updates)
 var dateResult = moment.format(format);
 console.log(dateResult)
+//current date + 1 day
+//+2 days
+//+ 3 days
+//+ 4 days
+//+ 5 days
 
 
 
 $(document).ready(function(){
+
+  //when the search button is clicked..
   $('.btn').click(function(){
     var searchedCity = $('#searched-city').val().trim();
     var city = document.createElement("tr");
@@ -22,7 +29,7 @@ $(document).ready(function(){
     //save to local storage
     localStorage.setItem('city', searchedCity); 
 
-    //API call
+    //API call 1
     queryURL = 'http://api.openweathermap.org/data/2.5/weather?q=' + searchedCity + '&appid=5cd539647450f9a07b96edfc16f158cb'
     console.log(queryURL)
     $.ajax({
@@ -32,10 +39,7 @@ $(document).ready(function(){
     console.log(response)
       //name
       var cityName = response.name
-      $(".city").html("<h3>" + cityName + " Weather Details (" + dateResult + ")</h3>");
-
-      //date
-    
+      $(".city").html("<h3>" + cityName + " (" + dateResult + ")</h3>");
 
       //icon (shown on page)
       var weatherIcon = response.weather[0].icon
@@ -48,17 +52,66 @@ $(document).ready(function(){
     
       //humidty
       var cityHumidity = response.main.humidity
-       $('.humidity').text("Humidity: " + cityHumidity)
+       $('.humidity').text("Humidity: " + cityHumidity + " %")
 
       //windspeed
       var cityWindSpeed = response.wind.speed
-      $('.windspeed').text("Wind Speed: " + cityWindSpeed)
+      $('.windspeed').text("Wind Speed: " + cityWindSpeed + " MPH")
 
-      //UV index
-      var uvIndex 
-      $('.uvindex').text("UV index: ")
+      //lattitude
+      var lattitude = response.coord.lat
+      
+      //longitude
+      var longitude = response.coord.lon
+      
+        uvURL = 'http://api.openweathermap.org/data/2.5/uvi?appid=5cd539647450f9a07b96edfc16f158cb&lat=' + lattitude + '&lon=' + longitude
+
+        $.ajax({
+          url: uvURL,
+          method: "GET"
+          }).then(function(response) {
+          console.log(response)
+          //UV index
+
+          var uvIndex = response.value
+          console.log(uvIndex)
+          $('.uvindex').text("UV index: " + uvIndex)
+          })
 
       });
+
+
+
+
+      //API call 2
+      queryURL2 = 'http://api.openweathermap.org/data/2.5/forecast?q=' + searchedCity + '&appid=5cd539647450f9a07b96edfc16f158cb'
+      console.log(queryURL2)
+      $.ajax({
+      url: queryURL2,
+      method: "GET"
+      }).then(function(response) {
+      console.log(response)
+      //temp
+      var temp2 = response.list[5].main.temp
+      console.log(temp2)
+      //icon FIX THIS
+      // var icon2 = response.list[5].weather[3]
+      // console.log(icon2)
+      //humidity
+      var humidity2 = response.list[5].main.humidity
+      console.log(humidity2)
+      
+      
+
+
+
+
+      })
+
+
+
+
+      
 
     });
 

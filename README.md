@@ -41,7 +41,7 @@ THEN I am presented with the
         the wind speed - "wind" . "speed"
         the UV index - separate API
      -display them in html - yes
-        -still missing UV index
+       
 
 WHEN I view the UV index
 THEN I am presented with a color that indicates whether the conditions are favorable, moderate, or severe
@@ -50,6 +50,14 @@ THEN I am presented with a color that indicates whether the conditions are favor
 
 WHEN I view future weather conditions for that city
 THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, and the humidity
+    -set up API call to the 5-day forecast API - yes
+    - determine attributes needed and locations  (do all at 12PM that day)
+        -date (moment)
+        -icon
+        -temp
+        -humidity
+    -create/display them in html
+    -creates title that says "5 Day Forecast"
 
 WHEN I click on a city in the search history
 THEN I am again presented with current and future conditions for that city
