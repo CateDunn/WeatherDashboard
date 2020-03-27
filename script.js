@@ -3,6 +3,13 @@ console.log('testing')
 var searchedCity = $('#searched-city').val().trim()
 var APIkey = '5cd539647450f9a07b96edfc16f158cb'
 
+var format = ('L');
+var moment = moment()
+console.log(moment)
+//curent date (automatically updates)
+var dateResult = moment.format(format);
+console.log(dateResult)
+
 
 
 $(document).ready(function(){
@@ -25,9 +32,10 @@ $(document).ready(function(){
     console.log(response)
       //name
       var cityName = response.name
-      $(".city").html("<h3>" + cityName + " Weather Details</h3>");
+      $(".city").html("<h3>" + cityName + " Weather Details (" + dateResult + ")</h3>");
 
       //date
+    
 
       //icon (shown on page)
       var weatherIcon = response.weather[0].icon
@@ -36,7 +44,7 @@ $(document).ready(function(){
 
       //temp (converted to F)
         var cityTemp = (response.main.temp - 273.15) * 1.80 + 32;
-        $(".temp").text("Temperature: " + cityTemp.toFixed(1) + " degrees Farenheit");
+        $(".temp").text("Temperature: " + cityTemp.toFixed(1) + " ° F");
     
       //humidty
       var cityHumidity = response.main.humidity
@@ -51,7 +59,7 @@ $(document).ready(function(){
       $('.uvindex').text("UV index: ")
 
       });
-      
+
     });
 
     

@@ -32,16 +32,16 @@ THEN I am presented with current and future conditions for that city and that ci
 WHEN I view current weather conditions for that city
 THEN I am presented with the 
     - set up API call - yes
-    - determine the attributes of the response needed & location
+    - determine the attributes of the response needed & location 
         city name - "name"
-        the date
+        the date - added using moment JS
         an icon representation of weather conditions - "icon"
         the temperature - "temp" (convert to Farenheit)
         the humidity - "humidity"
         the wind speed - "wind" . "speed"
-        the UV index
+        the UV index - separate API
      -display them in html - yes
-        -still missing date/UV index
+        -still missing UV index
 
 WHEN I view the UV index
 THEN I am presented with a color that indicates whether the conditions are favorable, moderate, or severe
