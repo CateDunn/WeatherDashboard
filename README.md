@@ -32,7 +32,6 @@ THEN I am presented with current and future conditions for that city and that ci
 WHEN I view current weather conditions for that city
 THEN I am presented with the 
     - set up API call - yes
-        get call to work with the city that has been typed in
     - determine the attributes of the response needed & location
         city name - "name"
         the date
