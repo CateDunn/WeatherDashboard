@@ -14,27 +14,40 @@
         <h1>Weather Dashboard</h1>
     </header>
 
+
+<main>
     <div class = 'container'>
-         <h2> Search for a City:</h2>
-         <input id = 'searched-city' type = 'text'>
-         <input class="btn btn-primary" type="submit" value="Submit">
-      
-        
-        <table id = 'search-history'>
+        <div class = "row">
+            <div class = 'col-md-4'>
+                <h2> Search for a City:</h2>
+                <input id = 'searched-city' type = 'text'>
+                <input class="btn btn-primary" type="submit" value="Submit">
+                <table id = 'search-history'></table>
+            </div>
+            <div class = "col-md-8">
+                <div  id = "info">
+                <div class="city"></div>
+                <div class="date"></div>
+                <div class="icon"></div>
+                <div class="temp"></div>
+                <div class="humidity"></div>
+                <div class="windspeed"></div>
+                <div class="uvindex"></div>
+                </div>
+                <div id = "5 day">
+                    
+                </div>
+            </div>
 
-        </table>
-    </div>
-      
-
-    <div class = 'container' id = 'info'>
+        </div>
         
-        <div class="city"></div>
-        <div class="date"></div>
-        <div class="icon"></div>
-        <div class="temp"></div>
-        <div class="humidity"></div>
-        <div class="windspeed"></div>
-        <div class="uvindex"></div>
+        <div class = "row">
+            <div class = "col-md-4">
+            
+            </div>
+
+
+        </div>
     </div>
     
 
@@ -51,12 +64,11 @@
 
 
 
-
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <script src = 'script.js'></script>
-
+</main>
 </body>
-
 </html>

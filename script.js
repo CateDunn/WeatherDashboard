@@ -37,6 +37,7 @@ $(document).ready(function(){
     method: "GET"
     }).then(function(response) {
     console.log(response)
+      $('#info').addClass('info');
       //name
       var cityName = response.name
       $(".city").html("<h3>" + cityName + " (" + dateResult + ")</h3>");
@@ -75,20 +76,20 @@ $(document).ready(function(){
           //UV index
           var uvIndex = response.value
           console.log(uvIndex)
-          var UV = parseFloat(uvIndex).toFixed(1)
+          var UV = parseFloat(uvIndex).toFixed(2)
           console.log(UV)
           $('.uvindex').text("UV index: " + uvIndex)
-            if (UV > 7)
+            if (UV >= 7)
               $('.uvindex').addClass('severe')
-            else if (4 > UV)
-              $('.uvindex').addClass('favorable')
-            else
+            else if (UV >= 4 && UV < 7)
               $('.uvindex').addClass('moderate')
-            
+            else
+              $('.uvindex').addClass('favorable')
 
           });
 
-    
+       
+
 
       });
 

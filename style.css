@@ -17,3 +17,12 @@ header {
 .severe {
     background-color: tomato;
 }
+
+.clear {
+    background-color: white;
+}
+
+.info {
+    border: 1px solid grey;
+    padding: 30px;
+}
