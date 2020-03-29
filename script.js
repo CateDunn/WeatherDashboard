@@ -103,7 +103,40 @@ $(document).ready(function(){
       method: "GET"
       }).then(function(response) {
       console.log(response)
+      $('#5-day').addClass('info')
+      //date
+      var date1 = response.list[5].dt_txt
+      var date2 = response.list[13].dt_txt
+      var date3 = response.list[21].dt_txt
+      var date4 = response.list[29].dt_txt
+      var date5 = response.list[37].dt_txt
+      $('.date1').html(date1)
+      $('.date2').html(date2)
+      $('.date3').html(date3)
+      $('.date4').html(date4)
+      $('.date5').html(date5)
+
+      //icon FIX THIS
+      var icon1 = response.list[5].weather[0].icon
+      var iconUrl1 = "http://openweathermap.org/img/w/" + icon1 + ".png";
+      $('.icon1').html("<img src='" + iconUrl1  + "'>");
+      var icon2 = response.list[13].weather[0].icon
+      var iconUrl2 = "http://openweathermap.org/img/w/" + icon2 + ".png";
+      $('.icon2').html("<img src='" + iconUrl2  + "'>");
+      var icon3 = response.list[21].weather[0].icon
+      var iconUrl3 = "http://openweathermap.org/img/w/" + icon3+ ".png";
+      $('.icon3').html("<img src='" + iconUrl3  + "'>");
+      var icon4 = response.list[29].weather[0].icon
+      var iconUrl4 = "http://openweathermap.org/img/w/" + icon4 + ".png";
+      $('.icon4').html("<img src='" + iconUrl4  + "'>");
+      var icon5 = response.list[37].weather[0].icon
+      var iconUrl5 = "http://openweathermap.org/img/w/" + icon5 + ".png";
+      $('.icon5').html("<img src='" + iconUrl5  + "'>");
+      
+
       //temp (convert to Farenheit)
+      var hey = response.list[5].main.temp
+      console.log(hey)
       var temp1 = (response.list[5].main.temp - 273.15) * 1.80 + 32;
       var temp2 = (response.list[13].main.temp - 273.15) * 1.80 + 32;
       var temp3 = (response.list[21].main.temp - 273.15) * 1.80 + 32;
@@ -115,9 +148,7 @@ $(document).ready(function(){
       $('.temp4').text("Temp: " + temp4.toFixed(1) + " ° F")
       $('.temp5').text("Temp: " + temp5.toFixed(1) + " ° F")
 
-      //icon FIX THIS
-      // var icon2 = response.list[5].weather[3]
-      // console.log(icon2)
+      
 
       //humidity
       $('.humidity1').text('Humidity: ' + response.list[5].main.humidity + "%")

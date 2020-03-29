@@ -28,4 +28,5 @@ header {
 .info {
     border: 1px solid grey;
     padding: 30px;
+    margin-top: 30px;
 }
