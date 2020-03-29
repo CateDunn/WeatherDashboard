@@ -103,15 +103,28 @@ $(document).ready(function(){
       method: "GET"
       }).then(function(response) {
       console.log(response)
-      //temp
-      var temp2 = response.list[5].main.temp
-      console.log(temp2)
+      //temp (convert to Farenheit)
+      var temp1 = (response.list[5].main.temp - 273.15) * 1.80 + 32;
+      var temp2 = (response.list[13].main.temp - 273.15) * 1.80 + 32;
+      var temp3 = (response.list[21].main.temp - 273.15) * 1.80 + 32;
+      var temp4 = (response.list[29].main.temp - 273.15) * 1.80 + 32;
+      var temp5 = (response.list[37].main.temp - 273.15) * 1.80 + 32;
+      $('.temp1').text("Temp: " + temp1.toFixed(1) + " ° F")
+      $('.temp2').text("Temp: " + temp2.toFixed(1) + " ° F")
+      $('.temp3').text("Temp: " + temp3.toFixed(1) + " ° F")
+      $('.temp4').text("Temp: " + temp4.toFixed(1) + " ° F")
+      $('.temp5').text("Temp: " + temp5.toFixed(1) + " ° F")
+
       //icon FIX THIS
       // var icon2 = response.list[5].weather[3]
       // console.log(icon2)
+
       //humidity
-      var humidity2 = response.list[5].main.humidity
-      console.log(humidity2)
+      $('.humidity1').text('Humidity: ' + response.list[5].main.humidity + "%")
+      $('.humidity2').text('Humidity: ' + response.list[13].main.humidity + "%")
+      $('.humidity3').text('Humidity: ' + response.list[21].main.humidity + "%")
+      $('.humidity4').text('Humidity: ' + response.list[29].main.humidity + "%")
+      $('.humidity5').text('Humidity: ' + response.list[37].main.humidity + "%")
       
       
 
