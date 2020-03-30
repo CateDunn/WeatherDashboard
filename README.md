@@ -46,7 +46,7 @@ THEN I am again presented with current and future conditions for that city
     
 WHEN I open the weather dashboard
 THEN I am presented with the last searched city forecast
-    -The most recently searched city is pulled from local storage and shown in the search box upon loading the page
+    - Using the last viewed city stored in local storage, the most recently searched city's current weather and 5 day Forecast are shown when the page is loaded
     
 
 
