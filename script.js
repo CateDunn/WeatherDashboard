@@ -2,25 +2,17 @@ console.log('testing')
 
 var searchedCity = $('#searched-city').val().trim()
 var APIkey = '5cd539647450f9a07b96edfc16f158cb'
-
 var format = ('L');
 var moment = moment()
-console.log(moment)
 //curent date (automatically updates)
 var dateResult = moment.format(format);
-console.log(dateResult)
-//current date + 1 day
-//+2 days
-//+ 3 days
-//+ 4 days
-//+ 5 days
-
+var last = localStorage.getItem('city');
 
 
 $(document).ready(function(){
-
+$('#searched-city').val(last)
   //when the search button is clicked..
-  $('.btn').click(function(){
+  $('.btn').click(function Render(){
     var searchedCity = $('#searched-city').val().trim();
     var city = document.createElement("tr");
     //add city typed in to list below
@@ -31,12 +23,10 @@ $(document).ready(function(){
 
     //API call 1
     queryURL = 'http://api.openweathermap.org/data/2.5/weather?q=' + searchedCity + '&appid=5cd539647450f9a07b96edfc16f158cb'
-    console.log(queryURL)
     $.ajax({
     url: queryURL,
     method: "GET"
     }).then(function(response) {
-    console.log(response)
       $('#info').addClass('info');
       //name
       var cityName = response.name
@@ -48,12 +38,12 @@ $(document).ready(function(){
       $('.icon').html("<img src='" + iconUrl  + "'>");
 
       //temp (converted to F)
-        var cityTemp = (response.main.temp - 273.15) * 1.80 + 32;
-        $(".temp").text("Temperature: " + cityTemp.toFixed(1) + " ° F");
+      var cityTemp = (response.main.temp - 273.15) * 1.80 + 32;
+      $(".temp").text("Temperature: " + cityTemp.toFixed(1) + " ° F");
     
       //humidty
       var cityHumidity = response.main.humidity
-       $('.humidity').text("Humidity: " + cityHumidity + " %")
+      $('.humidity').text("Humidity: " + cityHumidity + " %")
 
       //windspeed
       var cityWindSpeed = response.wind.speed
@@ -67,7 +57,6 @@ $(document).ready(function(){
       
       //UV index API call  
       uvURL = 'http://api.openweathermap.org/data/2.5/uvi?appid=5cd539647450f9a07b96edfc16f158cb&lat=' + lattitude + '&lon=' + longitude
-
         $.ajax({
           url: uvURL,
           method: "GET"
@@ -75,9 +64,7 @@ $(document).ready(function(){
           
           //UV index
           var uvIndex = response.value
-          console.log(uvIndex)
           var UV = parseFloat(uvIndex).toFixed(2)
-          console.log(UV)
           $('.uvindex').text("UV index: " + uvIndex)
             if (UV >= 7)
               $('.uvindex').addClass('severe')
@@ -89,21 +76,17 @@ $(document).ready(function(){
           });
 
        
-
-
       });
-
-
 
       //API call for 5 Day Forecast
       queryURL2 = 'http://api.openweathermap.org/data/2.5/forecast?q=' + searchedCity + '&appid=5cd539647450f9a07b96edfc16f158cb'
-      console.log(queryURL2)
       $.ajax({
       url: queryURL2,
       method: "GET"
       }).then(function(response) {
-      console.log(response)
+      $('h3').removeClass('hide')
       $('#5-day').addClass('info')
+
       //date
       var date1 = response.list[5].dt_txt
       var date2 = response.list[13].dt_txt
@@ -116,7 +99,7 @@ $(document).ready(function(){
       $('.date4').html(date4)
       $('.date5').html(date5)
 
-      //icon FIX THIS
+      //icon 
       var icon1 = response.list[5].weather[0].icon
       var iconUrl1 = "http://openweathermap.org/img/w/" + icon1 + ".png";
       $('.icon1').html("<img src='" + iconUrl1  + "'>");
@@ -133,10 +116,7 @@ $(document).ready(function(){
       var iconUrl5 = "http://openweathermap.org/img/w/" + icon5 + ".png";
       $('.icon5').html("<img src='" + iconUrl5  + "'>");
       
-
-      //temp (convert to Farenheit)
-      var hey = response.list[5].main.temp
-      console.log(hey)
+      //temp (converted to Farenheit)
       var temp1 = (response.list[5].main.temp - 273.15) * 1.80 + 32;
       var temp2 = (response.list[13].main.temp - 273.15) * 1.80 + 32;
       var temp3 = (response.list[21].main.temp - 273.15) * 1.80 + 32;
@@ -148,8 +128,6 @@ $(document).ready(function(){
       $('.temp4').text("Temp: " + temp4.toFixed(1) + " ° F")
       $('.temp5').text("Temp: " + temp5.toFixed(1) + " ° F")
 
-      
-
       //humidity
       $('.humidity1').text('Humidity: ' + response.list[5].main.humidity + "%")
       $('.humidity2').text('Humidity: ' + response.list[13].main.humidity + "%")
@@ -157,21 +135,6 @@ $(document).ready(function(){
       $('.humidity4').text('Humidity: ' + response.list[29].main.humidity + "%")
       $('.humidity5').text('Humidity: ' + response.list[37].main.humidity + "%")
       
-      
-
-
-
-
-      })
-
-
-
-
-      
-
+      });   
     });
-
-    
-
-
 });

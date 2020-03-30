@@ -8,17 +8,17 @@ header {
 
 .favorable{
     background-color: lightgreen;
-    border: 1px solid grey;
+   
 }
 
 .moderate {
     background-color: yellow;
-    border: 1px solid grey;
+    
 }
 
 .severe {
     background-color: tomato;
-    border: 1px solid grey;
+    
 }
 
 .clear {
@@ -30,3 +30,25 @@ header {
     padding: 30px;
     margin-top: 30px;
 }
+
+tr{
+    border: 1px solid grey;
+    font-size: 30px;
+   
+}
+
+.hide {
+    display:none
+}
+
+.p2 {
+    border: 1px solid gray;
+}
+
+.uvindex {
+    border-radius: 25px;
+
+}
+
+
+
