@@ -41,12 +41,22 @@ tr{
     display:none
 }
 
-.p2 {
-    border: 1px solid gray;
+.boxes {
+    border:1px solid #5bc0de;
+    background-color: #5bc0de;
+    margin: 10px;
 }
 
 .uvindex {
     border-radius: 25px;
+
+}
+
+.btn {
+    background-color: cornflowerblue;
+}
+#searched-city{
+    height: 50px
 
 }
 
