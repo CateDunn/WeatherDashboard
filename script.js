@@ -27,7 +27,7 @@ $(document).ready(function Render(){
 
       //icon (shown on page)
       var weatherIcon = response.weather[0].icon;
-      var iconUrl = "http://openweathermap.org/img/w/" + weatherIcon + ".png";
+      var iconUrl = "https://openweathermap.org/img/w/" + weatherIcon + ".png";
       $('.icon').html("<img src='" + iconUrl  + "'>");
 
       //temp (converted to F)
