@@ -7,7 +7,7 @@ var last = localStorage.getItem('city');
 var lastCity = localStorage.getItem('last city');
 var list = localStorage.getItem('search list');
 
-
+//test to git
 
 $(document).ready(function Render(){
   //when the document loads, the function is run using the last searched city
@@ -259,6 +259,6 @@ $(document).ready(function Render(){
       $('.humidity5').text('Humidity: ' + response.list[38].main.humidity + "%");
       
       });   
-    });
+    });   
 
 });
