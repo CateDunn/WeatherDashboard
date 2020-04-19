@@ -14,7 +14,7 @@ $(document).ready(function Render(){
 
   
   //API call 1
-  queryURL = 'http://api.openweathermap.org/data/2.5/weather?q=' + lastCity + '&appid=5cd539647450f9a07b96edfc16f158cb'
+  queryURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + lastCity + '&appid=5cd539647450f9a07b96edfc16f158cb'
   $.ajax({
   url: queryURL,
   method: "GET"
@@ -70,7 +70,7 @@ $(document).ready(function Render(){
   });
 
   //API call for 5 Day Forecast
-  queryURL2 = 'http://api.openweathermap.org/data/2.5/forecast?q=' + lastCity + '&appid=5cd539647450f9a07b96edfc16f158cb';
+  queryURL2 = 'https://api.openweathermap.org/data/2.5/forecast?q=' + lastCity + '&appid=5cd539647450f9a07b96edfc16f158cb';
   $.ajax({
   url: queryURL2,
   method: "GET"
