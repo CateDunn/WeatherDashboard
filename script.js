@@ -49,7 +49,7 @@ $(document).ready(function Render(){
       var longitude = response.coord.lon;
 
       //UV index API call  
-      uvURL = 'http://api.openweathermap.org/data/2.5/uvi?appid=5cd539647450f9a07b96edfc16f158cb&lat=' + lattitude + '&lon=' + longitude
+      uvURL = 'https://api.openweathermap.org/data/2.5/uvi?appid=5cd539647450f9a07b96edfc16f158cb&lat=' + lattitude + '&lon=' + longitude
         $.ajax({
           url: uvURL,
           method: "GET"
@@ -93,19 +93,19 @@ $(document).ready(function Render(){
 
   //icon 
   var icon1 = response.list[6].weather[0].icon;
-  var iconUrl1 = "http://openweathermap.org/img/w/" + icon1 + ".png";
+  var iconUrl1 = "https://openweathermap.org/img/w/" + icon1 + ".png";
   $('.icon1').html("<img src='" + iconUrl1  + "'>");
   var icon2 = response.list[14].weather[0].icon;
-  var iconUrl2 = "http://openweathermap.org/img/w/" + icon2 + ".png";
+  var iconUrl2 = "https://openweathermap.org/img/w/" + icon2 + ".png";
   $('.icon2').html("<img src='" + iconUrl2  + "'>");
   var icon3 = response.list[22].weather[0].icon;
-  var iconUrl3 = "http://openweathermap.org/img/w/" + icon3+ ".png";
+  var iconUrl3 = "https://openweathermap.org/img/w/" + icon3+ ".png";
   $('.icon3').html("<img src='" + iconUrl3  + "'>");
   var icon4 = response.list[30].weather[0].icon;
-  var iconUrl4 = "http://openweathermap.org/img/w/" + icon4 + ".png";
+  var iconUrl4 = "https://openweathermap.org/img/w/" + icon4 + ".png";
   $('.icon4').html("<img src='" + iconUrl4  + "'>");
   var icon5 = response.list[38].weather[0].icon;
-  var iconUrl5 = "http://openweathermap.org/img/w/" + icon5 + ".png";
+  var iconUrl5 = "https://openweathermap.org/img/w/" + icon5 + ".png";
   $('.icon5').html("<img src='" + iconUrl5  + "'>");
   
   //temp (converted to Farenheit)
@@ -157,7 +157,7 @@ $(document).ready(function Render(){
 
       //icon (shown on page)
       var weatherIcon = response.weather[0].icon;
-      var iconUrl = "http://openweathermap.org/img/w/" + weatherIcon + ".png";
+      var iconUrl = "https://openweathermap.org/img/w/" + weatherIcon + ".png";
       $('.icon').html("<img src='" + iconUrl  + "'>");
 
       //temp (converted to F)
@@ -179,7 +179,7 @@ $(document).ready(function Render(){
       var longitude = response.coord.lon;
       
       //UV index API call  
-      uvURL = 'http://api.openweathermap.org/data/2.5/uvi?appid=5cd539647450f9a07b96edfc16f158cb&lat=' + lattitude + '&lon=' + longitude
+      uvURL = 'https://api.openweathermap.org/data/2.5/uvi?appid=5cd539647450f9a07b96edfc16f158cb&lat=' + lattitude + '&lon=' + longitude
         $.ajax({
           url: uvURL,
           method: "GET"
