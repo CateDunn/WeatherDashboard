@@ -3,9 +3,7 @@
 ## Description 
 This app allows users to search for a city and view the current weather conditions along with the 5 day forecast for that area.
 
-![](weather.png)
-
-https://catedunn.github.io/WeatherDashboard/
+[![weather dashboard](weather.png)](https://catedunn.github.io/WeatherDashboard/)
 
 ## User Story
 AS A traveler
