@@ -5,7 +5,6 @@ var moment = moment();
 var dateResult = moment.format(format);
 var last = localStorage.getItem('city');
 var lastCity = localStorage.getItem('last city');
-var list = localStorage.getItem('search list');
 
 //test to git
 
@@ -131,9 +130,20 @@ $(document).ready(function Render(){
 
   // repeating above function when search button is clicked using the city 
   //that is typed in
+  $('#search-history').on('click', 'tr', function (){
+    console.log('we clicked a city')
+    // var test = document.getElementById("search-history").textContent
+    var $row =
+    console.log($row)
+  })
+
+
+
+
   $('.btn').click(function(){
     var searchedCity = $('#searched-city').val().trim();
     var city = document.createElement("tr");
+    
     //add city typed in to list below
     city.textContent = searchedCity;
     $('#search-history').prepend(city);
